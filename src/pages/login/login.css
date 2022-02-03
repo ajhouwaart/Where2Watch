@@ -1,0 +1,62 @@
+.loginScreen {
+    position: absolute;
+    left: var(--menustrokes-left-8rem-0);
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem 3rem 1.5rem 3rem;
+    width: var(--menu-items-width-56rem-100vw);
+    min-height: 100%;
+    background-color: hsla(var(--mainTint), 30%, .8);
+    border: 1rem solid hsla(var(--mainColor), 1);
+    backdrop-filter: blur(.6rem);
+    transform-origin:center center;
+    animation: scale 400ms ease-out;
+}
+
+.loginscreenContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-direction: var(--flexdirectionrowtocolumn);
+}
+.loginscreenContainerbutton {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.submitLoginButton, .registerButton {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: hsl(var(--textColor));
+    border: .4rem solid hsl(0 0% 90%);
+    border-radius: 10rem;
+    width: 10rem;
+    min-height: 3.5rem;
+    padding-bottom: .2rem;
+    transition: filter 200ms ease-in;
+    background: hsl(var(--mainColor));
+}
+.submitLoginButton:hover,
+.registerButton:hover {
+    filter: brightness(120%);
+    transition: filter 200ms ease-in;
+}
+.registerButton {
+    padding-top: .1rem;
+    max-width: 20rem;
+    width: 100%;
+    place-self: flex-end;
+}
+.errorlogin{
+    margin:0;
+    font-size: 1.3rem;
+    max-width: max-content;
+    align-self: center;
+    color: hsl(var(--textColor));
+    animation: bottomborderpulse 500ms infinite alternate-reverse;
+}

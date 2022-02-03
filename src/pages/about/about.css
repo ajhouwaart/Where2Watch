@@ -1,0 +1,60 @@
+#aboutTop {
+    color: hsl(var(--textColor));
+    font-size: 1.5rem;
+    transition: color 300ms ease-out 50ms;
+    animation: simpleOpacity 500ms ease-in forwards;
+}
+
+.about-box {
+    width: var(--menu-items-width-56rem-100vw);
+    max-height: 40rem;
+    padding: 1.5rem;
+    border: 1rem solid hsla(var(--mainColor), 1);
+    border-radius: 0 0 2rem 2rem;
+    margin-top: .4rem;
+    border-top: none;
+    font-size: 1.3rem;
+    overflow-y: scroll;
+    background-color: hsla(0, 0%, 12%, .9);
+    text-align: start;
+    transform: scaleY(0);
+    transform-origin: top;
+    animation: scaleY 500ms ease-in-out forwards 400ms;
+}
+
+.about-box > * {
+    opacity: 0;
+    color: hsl(0 0% 90% / 1);
+    margin: 1rem;
+    list-style: inside;
+    animation: simpleOpacity 500ms ease-out forwards 900ms;
+}
+
+.about-box > h1 {
+    font-size: 3rem;
+}
+
+.about-links {
+    opacity: 0;
+    position: relative;
+    text-decoration: underline;
+    color: hsl(0 0% 90% / 1);
+    animation: simpleOpacity 500ms ease-out forwards 900ms;
+    transition: color 200ms;
+}
+
+.about-links::before {
+    opacity: 0;
+    width: 200%;
+    height: 250%;
+    left: -50%;
+    top: -70%;
+    background-image: radial-gradient(ellipse at center, hsl(var(--mainColorHue) 100% 50% / .5) 0%, transparent 70%);
+    transition: opacity 250ms;
+    z-index: -1;
+}
+
+.about-links:hover::before,
+.about-links:focus::before {
+    opacity: 1;
+}

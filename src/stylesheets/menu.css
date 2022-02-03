@@ -1,0 +1,142 @@
+.menuBefore, .menuAfter {
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    max-height: 24rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: var(--flexdirectioncolumntorow);
+    align-items: center;
+    justify-content: var(--justify-content-start-evenly);
+    transform-origin: top;
+    padding: var(--padding-menu);
+    width: var(--width-menu-8rem-100);
+    background-color: hsla(var(--mainColor), 1);
+    border-radius: var(--border-radius-menu);
+    z-index: 5;
+}
+.menuBefore {
+    transform: scaleY(0);
+    transition: transform 500ms 500ms ease-out, border-radius 500ms ease-in;
+
+}
+.menuAfter {
+    transform: scaleY(1);
+    transition: transform 500ms 100ms ease, border-radius 500ms ease-in;
+}
+
+.menuStroke {
+    position: absolute;
+    padding-top: .3rem;
+    text-align: center;
+    left: var(--menustrokes-left-8rem-0);
+    max-width: 64rem;
+    height: 3rem;
+    width: 0;
+    transform-origin: left;
+    border-top-right-radius: 2rem;
+    background: hsla(var(--mainColor), 1);
+    animation: width 500ms ease-out forwards;
+}
+@keyframes width {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: var(--menu-items-width-56rem-100vw);
+    }
+}
+.menuItemButtonsBefore, .menuItemButtonsAfter {
+    text-decoration: none;
+    position: relative;
+    font-size: 1.2rem;
+    color: hsl(var(--textColor) / 1);
+    padding-top: .6rem;
+    border-radius: 3rem;
+    width: 8rem;
+    height: 3rem;
+    filter: brightness(100%);
+    background: hsla(var(--mainColor), 1);
+}
+
+.menuItemButtonsBefore {
+    opacity: 0;
+    transform: scaleY(0);
+    transition:  transform 1ms 400ms, opacity 400ms, filter 350ms ease-out;
+}
+.menuItemButtonsAfter {
+    opacity: 1;
+    transform: scaleY(1);
+    transition:  transform 1ms, opacity 400ms  500ms, filter 350ms ease-out;
+}
+.menuItemButtonsAfter:hover,
+.menuItemButtonsAfter:focus {
+    filter: brightness(120%);
+    transition: filter 200ms ease-out;
+}
+
+.menuItemButtonsAfter.activated {
+    filter: brightness(120%);
+}
+
+
+.loginButtonBefore, .logoutButtonBefore {
+    opacity: 0;
+}
+.loginButton,
+.loginButtonBefore,
+.logoutButtonBefore,
+.logoutButton {
+    margin: auto 0;
+    height: 4rem;
+    aspect-ratio: 1;
+    position: relative;
+    color: hsl(var(--textColor));
+    font-size: 4rem;
+    cursor: pointer;
+}
+.loginButton, .logoutButton {
+    opacity: 1;
+    transition: opacity 400ms ease-in 500ms;
+}
+.loginButton i {
+    position:absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(0);
+}
+
+.logoutButton i {
+    position:absolute;
+    left: 100%;
+    top:100%;
+    transform: rotate(180deg);
+}
+
+.loginButton > p, .logoutButton > p {
+    position: absolute;
+    margin:0;
+    box-sizing: border-box;
+    height: 2.3rem;
+    width: 5rem;
+    background: hsl(var(--mainTint), 40%);
+    border-radius: .5rem;
+    color: hsl(var(--textColor));
+    padding: .1rem 0 .1rem 0;
+    text-align: center;
+    border: .2rem solid hsl(var(--mainTint), 80%);
+    font-size: 1.2rem;
+    left: -.5rem;
+    top: -1rem;
+    transform: scale(0);
+    transition: transform 250ms ease;
+    z-index: 5;
+}
+.logoutButton > p {
+    width: 6rem;
+}
+
+.loginButton:hover > p, .logoutButton:hover > p {
+    transform: scale(1);
+    z-index: 5;
+}

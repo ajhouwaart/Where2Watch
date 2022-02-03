@@ -1,0 +1,215 @@
+.accountScreen {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    width: var(--menu-items-width-56rem-100vw);
+    min-height: 24rem;
+    background-color: hsla(var(--mainTint), 30%, .7);
+    border: 1rem solid hsla(var(--mainColor), 1);
+    border-radius: var(--border-radius-account-menu);
+    backdrop-filter: blur(.6rem);
+    left: var(--menustrokes-left-8rem-0);
+    transform-origin:center center;
+    transition: border-radius 200ms ease;
+    animation: scale 400ms ease-out;
+    color: hsl(var(--textColor));
+    font-size: 1.6rem;
+}
+
+.accountScreen-top-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.accountScreen h2 {
+    position: relative;
+}
+.accountScreen h2::before {
+    position: absolute;
+    content: '';
+    height: 4px;
+    border-radius: 0 0 2rem 2rem;
+    width: 120%;
+    bottom: 0;
+    left: -10%;
+    background-color: hsl(var(--textColor));
+}
+
+.accountScreen h2::after {
+    position: absolute;
+    content: '';
+    height: 4px;
+    border-radius: 2rem 2rem 0 0;
+    width: 120%;
+    top: 0;
+    left: -10%;
+    background-color: hsl(var(--textColor));
+}
+.avatar-container {
+    position: relative;
+    margin-right: 3rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.3rem;
+    width: 11rem;
+    height: 11rem;
+    border-radius: 1rem 0 0 1rem;
+    background: hsl(0 0% 100% / .4);
+    transition: width 400ms ease, height 400ms ease;
+}
+#avatar-container-widen {
+    margin-right: 0;
+    width: 20rem;
+    height: 27rem;
+    border-radius: 1rem;
+    align-items: center;
+
+}
+
+.avatar-container img {
+    filter: drop-shadow(0 0 4px hsl(0 0% 0% / .7));
+}
+
+
+.change-avatar-btn-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotate(90deg);
+}
+.change-avatar-btn {
+    position: absolute;
+    left:0;
+    top: -3rem;
+    width:11rem;
+    height: 3rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    background: hsl(var(--textColor));
+    border-radius: 1rem 1rem 0 0;
+    color: hsl(var(--mainColor));
+    transition:  filter 400ms;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    filter: blur(0)
+}
+
+#change-avatar-btn-fade {
+    filter: blur(4rem);
+}
+
+.change-avatar-btn:hover {
+
+}
+.change-avatar-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: .7rem;
+    padding: 1rem;
+    filter: blur(4rem);
+    transform: scale(0);
+    transition: filter 250ms ease, transform 250ms 100ms;
+}
+#change-avatar-container-fade {
+    transform: scale(1);
+    filter: blur(0);
+    transition: filter 500ms 200ms ease, transform 200ms;
+}
+.change-avatar-container div:first-of-type,
+.change-avatar-container p {
+    font-size: 1.3rem;
+    user-select: none;
+}
+.change-avatar-container div:first-of-type {
+    display: flex;
+    align-items: center;
+}
+.change-avatar-container p {
+    margin-top: -.5rem;
+}
+.change-avatar-container div:first-of-type button {
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+.change-avatar-container div:first-of-type p {
+    padding: 0;
+    margin: 0;
+}
+
+.change-avatar-container div:first-of-type button::before {
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    background-color: hsl(var(--textColor));
+    left: 0;
+    transform: translateX(0);
+    transition: transform 200ms,  width 200ms;
+}
+.change-avatar-container div:first-of-type button:hover::before {
+    width: 150%;
+    transform: translateX(-15%);
+
+}
+.change-avatar-container button {
+    background-color: hsl(var(--mainColor));
+    padding: 0 .8rem .2rem .8rem;
+    cursor: pointer;
+    border-radius: .5rem;
+    color: var(--textColor);
+    font-size: 1.5rem;
+    filter: brightness(100%);
+    transition: filter 200ms;
+}
+.change-avatar-container button:hover,
+.change-avatar-container button:focus {
+    filter: brightness(120%);
+}
+
+#input-avatar {
+    height: 2.5rem;
+    text-align: center;
+}
+#input-avatar::placeholder {
+    text-align: center;
+}
+
+#change-variant-btn-left,
+#change-variant-btn-right {
+    position: absolute;
+    top: 3.2rem;
+    font-size: 3rem;
+    background-color: transparent;
+    padding: 0;
+}
+#change-variant-btn-left {
+    left: 3rem;
+    transform: rotate(180deg);
+}
+#change-variant-btn-right {
+    right: 3rem;
+}
+
+
+.change-avatar-save-cancel-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.accountScreen p:last-child {
+    width: 100%;
+    line-height: 1;
+}

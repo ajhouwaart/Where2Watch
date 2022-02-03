@@ -1,0 +1,92 @@
+.loggedInContainer {
+    position: relative;
+    max-width: 64rem;
+    width: 100%;
+    flex-shrink: 0;
+    min-height: 6rem;
+    border-radius: 3rem 3rem 0 0;
+    padding: 1rem 1rem 0 1rem;
+    background: hsla(var(--mainColor), 1);
+    animation: firstblur 1000ms ease forwards;
+}
+.loggedInContainer::before {
+    width: 100%;
+    height: 3rem;
+    background: hsla(var(--mainColor), 1);
+    left:0;
+    bottom: -3rem;
+}
+.loggedinTop {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 5rem;
+    padding: 1rem;
+    background-color: hsla(var(--mainTint), 5%, .7);
+    border-radius: 2rem;
+}
+.pro {
+    color: hsl(var(--textColor));
+    height: 2rem;
+    width: 9rem;
+    margin: 0;
+    border-radius: 2rem;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    box-sizing: border-box;
+    padding-top:0;
+    user-select: none;
+    outline: 2px solid hsla(var(--mainColor), .5);
+    background: hsla(var(--mainColor), 1);
+    filter: invert(100%) ;
+    box-shadow: 0 0 2rem  hsla(var(--mainColor), 1), 0 0 .5rem  hsla(var(--mainColor), 1);
+}
+
+.otherCountryContainer {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+.otherCountryContainer > p {
+    margin:0 1rem 0 1rem;
+    font-size: 1.4rem;
+    color: hsl(var(--mainColorHue) 5% 90%);
+}
+.countryButton {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: none;
+    background-size: contain;
+}
+.countryButton:hover,
+.countryButton:focus {
+    cursor: pointer;
+    border: .2rem solid hsla(var(--mainTint), 70%, 1);
+}
+#nlBtn {
+    background-image: url("../../assets/netherlands.png");
+}
+#gbBtn {
+    background-image: url("../../assets/united-kingdom.png");
+}
+#usBtn {
+    background-image: url("../../assets/united-states.png");
+}
+#deBtn {
+    background-image: url("../../assets/germany.png");
+}
+#caBtn {
+    background-image: url("../../assets/canada.png");
+}
+#esBtn {
+    background-image: url("../../assets/spain.png");
+}
+#frBtn {
+    background-image: url("../../assets/france.png");
+}

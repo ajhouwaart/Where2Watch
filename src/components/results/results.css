@@ -1,0 +1,259 @@
+.searchBox {
+    margin-top: -2.7rem;
+    display: flex;
+    flex-direction: column;
+    padding: 5.2rem 1rem 1rem 1rem;
+    width: 100%;
+    max-height: 100%;
+    gap: 1rem;
+    background-color: hsla(var(--mainTint), 5%, .7);
+    border-radius: 0 0 4rem 4rem;
+    border: 1rem solid hsla(var(--mainTint), 30%, 1);
+    border-top: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+#searchBoxBefore {
+    transform: scaleY(0);
+}
+#searchBoxAfter {
+    transform: scaleY(1);
+}
+.resultBox {
+    max-width: 100%;
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "pic title"
+                         "pic year"
+                         "pic buttons";
+    border: .2rem solid white;
+    transition: max-width 300ms;
+    animation: simpleOpacity 2s;
+}
+#changeResultbox {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr .6fr .6fr 1fr .6fr;
+    grid-template-areas: "pic title title"
+                         "pic tagline tagline"
+                         "pic year imdb"
+                         "pic runtime meta"
+                         "pic available available"
+                         "pic trailer trailer";
+    animation: none;
+}
+.title {
+    box-sizing: border-box;
+    padding: 1rem;
+    width: 100%;
+    color: hsl(var(--mainColorHue) 5% 90%);
+    font-size: 2rem;
+    grid-area: title;
+    margin:0;
+}
+.pic {
+    max-width: 100%;
+    max-height: 100%;
+    grid-area: pic;
+}
+.year {
+    color: hsl(var(--mainColorHue) 5% 90%);
+    max-width: 100%;
+    font-size: 2rem;
+    grid-area: year;
+    margin:0;
+}
+.logintosee {
+    color: hsl(var(--textColor));
+    font-size: 1.6rem;
+    width: 15rem;
+    height: 5rem;
+    grid-area: buttons;
+    border-radius: 1.3rem;
+    filter:brightness(100%);
+}
+.logintosee:hover {
+    filter: brightness(120%);
+    transition: filter 250ms, outline 250ms;
+    outline: .3rem solid var(--textColor);
+    cursor: pointer;
+}
+.logintosee2 {
+    color: hsl(var(--textColor));
+    font-size: 1.3rem;
+    padding: 0 1rem 0 1rem;
+    width: 22rem;
+    height: 4rem;
+    grid-area: buttons;
+    border-radius: 1rem;
+    filter:brightness(100%);
+    transition: filter 250ms ease;
+}
+.logintosee2:hover {
+    cursor: pointer;
+    filter: brightness(120%);
+
+}
+#changeButton {
+    position: absolute;
+    transform: scale(0);
+}
+.description {
+    color: hsl(var(--mainColorHue) 5% 90%);
+    font-size: 1.3rem;
+    grid-area: tagline;
+    font-style: italic;
+    margin: 0 1rem 0 1rem;
+}
+.runtime {
+    color: hsl(var(--mainColorHue) 5% 90%);
+    grid-area: runtime;
+    font-size: 1.3rem;
+}
+.imdbRating,
+.metaRating {
+    font-size: 1.3rem;
+    color: hsl(var(--mainColorHue) 5% 90%);
+}
+.imdbRating {
+    grid-area: imdb;
+}
+.metaRating {
+    grid-area: meta;
+}
+.watchTrailer {
+    grid-area: trailer;
+    color: hsl(var(--mainColorHue),5%,10%);
+    font-size: 1.3rem;
+    font-weight: bolder;
+    width:12rem;
+    height:3rem;
+    margin-top:1rem;
+    border-radius: 1rem;
+    position: relative;
+    text-shadow: 0 0 .4rem white;
+    filter:brightness(100%) invert(100%);
+}
+.watchTrailer:hover {
+    filter: brightness(90%) invert(100%);
+    transition: filter 250ms, outline 250ms;
+    outline: .3rem solid hsl(0,0%,10%);
+    cursor: pointer;
+}
+.watchTrailer::before {
+    position: absolute;
+    content: '';
+    width:16rem;
+    height:.3rem;
+    border-radius: 10rem;
+    background: linear-gradient(to right, hsla(var(--mainColor), 0)0%,hsla(var(--mainColor), 1)20%,hsla(var(--mainColor), 0)20%, hsla(var(--mainColor), 0)80%,hsla(var(--mainColor), 1)80%,hsla(var(--mainColor), 0)100% );
+    top: 1.35rem;
+    left:-2rem;
+}
+
+.availableContainer {
+    margin-top: 1rem;
+    grid-area: available;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.availableContainer::before {
+    content: '';
+    position: absolute;
+    width: .3rem;
+    height: 11rem;
+    background: linear-gradient(to top, hsla(var(--mainColor), 0)0%,hsla(var(--mainColor), 1)50%,hsla(var(--mainColor), 0)100%);
+    top: -180%;
+    left:50%;
+}
+.availableContainer::after {
+    content: '';
+    position: absolute;
+    height: .3rem;
+    width: 20rem;
+    background: linear-gradient(to right, hsla(var(--mainColor), 0)0%,hsla(var(--mainColor), 1)50%,hsla(var(--mainColor), 0)100%);
+    top: 0;
+
+}
+.availableContainer > p {
+    margin:1rem 0 0 0;
+    color: hsl(var(--mainColorHue) 5% 90%);
+    font-size: 1.2rem;
+}
+.availableInfoContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap:1rem;
+}
+.icons {
+    filter: invert(100%) brightness(120%);
+    width: 7rem;
+}
+.icons:hover {
+    filter: invert(100%) brightness(120%) drop-shadow(0 0 .7rem hsl(var(--mainColor)));
+    transition: filter 300ms;
+}
+.embedresize {
+    max-width: 100%;
+    height: var(--heightTrailerbox);
+    transform: scale(0);
+    border: .2rem solid white;
+    border-radius: 2rem;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+#trailerBox{
+    z-index: 10;
+    transform: scale(1);
+}
+.video {
+    width:100rem;
+    height:57rem;
+    zoom: 1;
+    transform: scale(var(--scaleEmbeddedVideo));
+    transform-origin: 0 0;
+}
+.noResults,
+.noimg {
+    font-size: 1.3rem;
+    width:100%;
+    color: hsl(var(--mainColorHue) 5% 90%);
+}
+.errorMessage1 {
+    margin-top: 3rem;
+    grid-area: tagline;
+    font-size: 1.5rem;
+    color: hsl(360, 100%, 50%);
+    background-color: hsla(var(--mainTint), 5%, .9);
+    animation: termpulse 1s infinite alternate;
+}
+
+.errorMessage1-without-bg {
+    font-size: 1.6rem;
+    color: hsl(360, 100%, 50%);
+    animation: termpulse 1s infinite alternate;
+}
+.errorMessage2 {
+    grid-area: available;
+    font-size: 1.5rem;
+    color: hsl(360, 100%, 50%);
+    background-color: hsla(var(--mainTint), 5%, .9);
+    animation: termpulse 1s infinite alternate;
+}
+
+.no-further-info {
+    font-size: 1.3rem;
+    width:100%;
+    color: hsl(var(--mainColorHue) 5% 90%);
+}

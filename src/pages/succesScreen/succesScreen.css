@@ -1,0 +1,21 @@
+.succesScreen {
+    position: absolute;
+    padding: 1rem;
+    gap: 1rem;
+    top:0;
+    left: var(--menustrokes-left-8rem-0);
+    align-self: flex-start;
+    width:var(--menu-items-width-56rem-100vw);
+    height: 15rem;
+    background-color: hsl(var(--mainColor));
+    border-radius: 0 0 3rem 0;
+    transform-origin:center center;
+    animation: scale 400ms ease-out;
+}
+.succesScreen > h1 {
+    color: hsl(var(--textColor));
+}
+.emoji {
+    height: 10rem;
+
+}

@@ -1,0 +1,127 @@
+.topBarContainer {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 6rem;
+    max-width: 64rem;
+    width: 100%;
+    z-index: 3;
+    animation: firstblur 1000ms ease forwards;
+}
+
+
+.inputSearch {
+    box-sizing: border-box;
+    padding-left: .5rem;
+    padding-right:.5rem;
+    position: relative;
+    max-width: 75%;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    vertical-align: center;
+    text-align: center;
+    font-size: 3rem;
+    color: hsl(var(--mainColorHue) 5% 10%);
+    z-index: 1;
+}
+.inputSearch::placeholder {
+    transform: scale(.8);
+}
+.inputSearch:focus {
+    border: .4rem solid hsla(var(--mainColor), .5)
+}
+.searchButton {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+    width: 8rem;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    border-radius: var(--border-radius-searchbutton);
+    cursor: pointer;
+    filter: brightness(100%);
+    transition: filter 200ms ease-out, border-radius 500ms 900ms ease-in;
+    background-color: hsla(var(--mainColor), 1);
+    z-index: 1;
+}
+
+.searchButton-return {
+    transition: filter 200ms ease-out, border-radius 100ms ease-in;
+}
+
+.searchButton:hover {
+    filter: brightness(120%);
+}
+
+.searchButton > img {
+    height: 70%;
+    margin-right: .3rem;
+    filter: brightness(calc(var(--iconBrightness) + 10%));
+}
+
+
+.menuButton {
+    justify-self: flex-start;
+    align-self: flex-start;
+    height: 6rem;
+    width: 8rem;
+    flex-shrink: 0;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    border-radius: var(--border-radius-menubutton);
+    background: hsla(var(--mainColor), 1);
+    filter: brightness(100%);
+    transition: filter 200ms ease-out, border-radius 500ms 900ms ease-in;
+    z-index: 3;
+}
+
+.menuButton-return {
+    transition: filter 200ms ease-out, border-radius 100ms ease-in;
+}
+
+.menuButton:hover {
+    cursor: pointer;
+    filter: brightness(120%);
+}
+.menuicon {
+    height: .5rem;
+    width: 3rem;
+    border-radius: .5rem;
+    background-color: hsla(0, 0%, 95%, 1);
+}
+#menuicon {
+    animation: menuIcon1Go 1s;
+    animation-fill-mode: forwards;
+}
+#menuicon2 {
+    animation: menuIcon3Go 1s;
+    animation-fill-mode: forwards;
+    background-color: hsla(0,0%,0%,.3);
+}
+#menuicon3 {
+    animation: menuIcon2Go 1s;
+    animation-fill-mode: forwards;
+}
+#menuiconAfter {
+    animation: menuIcon1Back 1s;
+    animation-fill-mode: forwards;
+}
+#menuicon2After {
+    animation: menuIcon3Back 1s;
+    animation-fill-mode: forwards;
+    background-color: hsla(0,0%,0%,.3);
+}
+#menuicon3After {
+     animation: menuIcon2Back 1s;
+     animation-fill-mode: forwards;
+ }

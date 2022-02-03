@@ -1,0 +1,38 @@
+.noOfResultsContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    position: absolute;
+    top: 6.5rem;
+    left: 3rem;
+    z-index: 0;
+    align-items: center;
+}
+.noOfResults{
+    background-color: hsla(var(--mainTint), 5%, .7);
+    margin:0 0 0 1rem;
+    color: hsl(var(--mainColorHue) 5% 90%);
+    padding: 0 1rem 0 1rem;
+    font-size: 1.4rem;
+    border-radius: .5rem;
+
+}
+.countButtonMin,
+.countButtonPlus {
+    filter: invert(100%);
+    height: 2.5rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    padding:0 .5rem .2rem .5rem;
+}
+.countButtonPlus {
+    border-radius: 4rem 15rem 15rem 4rem;
+}
+.countButtonMin {
+    margin-right: -.5rem;
+    border-radius: 15rem 4rem 4rem 15rem;
+}
+.countButtonMin:hover,
+.countButtonPlus:hover {
+    cursor: pointer;
+}
